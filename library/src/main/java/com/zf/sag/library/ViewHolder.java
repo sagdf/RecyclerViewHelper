@@ -17,8 +17,8 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         this.itemBinding = binding;
     }
 
-    public void setViewModel(BaseObservable item) {
-        itemBinding.setVariable(com.zf.sag.library.BR.viewModel,item);
+    public void setViewModel(int variableID, BaseObservable item) {
+        itemBinding.setVariable(variableID, item);
     }
 
 }

@@ -25,10 +25,16 @@ public class RecyclerAdapter<T extends BaseObservable> extends RecyclerView.Adap
     private Context context;
     private List<BaseObservable> lists;
 
+    private int variableID;
+
     public RecyclerAdapter(Context context, int itemView, List<BaseObservable> lists) {
         this.context = context;
         this.itemView = itemView;
         this.lists = lists;
+    }
+
+    public void setVariableID(int variableID) {
+        this.variableID = variableID;
     }
 
     @Override
@@ -62,7 +68,7 @@ public class RecyclerAdapter<T extends BaseObservable> extends RecyclerView.Adap
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.setViewModel(lists.get(position));
+        holder.setViewModel(variableID, lists.get(position));
     }
 
     @Override
