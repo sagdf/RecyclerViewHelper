@@ -40,27 +40,8 @@ public class RecyclerAdapter<T extends BaseObservable> extends RecyclerView.Adap
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        ViewHolder holder = null;
-
-        switch (viewType) {
-            case LOADING_VIEW:
-//                baseViewHolder = getLoadingView(parent);
-//                initItemClickListener(baseViewHolder);
-                break;
-            case HEADER_VIEW:
-//                holder = new BaseViewHolder(mContext, mHeaderView);
-                break;
-            case EMPTY_VIEW:
-//                holder = new BaseViewHolder(mContext, mEmptyView);
-                break;
-            case FOOTER_VIEW:
-                ViewDataBinding binding = DataBindingUtil.inflate(LayoutInflater.from(context), itemView, parent, false);
-                holder = new ViewHolder(binding);
-                break;
-            default:
-//                holder = onCreateDefViewHolder(parent, viewType);
-//                initItemClickListener(baseViewHolder);
-        }
+        ViewDataBinding binding = DataBindingUtil.inflate(LayoutInflater.from(context), itemView, parent, false);
+        ViewHolder holder = new ViewHolder(binding);
 
         return holder;
 
